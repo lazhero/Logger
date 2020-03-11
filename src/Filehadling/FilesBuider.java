@@ -5,8 +5,8 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 
 public class FilesBuider {
-    public static FilesBuider instance=null;
-    public static int InstancesNumber;
+    private static FilesBuider instance=null;
+    private static int InstancesNumber;
     private FilesBuider(){
 
     }
@@ -18,9 +18,9 @@ public class FilesBuider {
 
     }
     @NotNull
-    public static File BuildFile(){
+    public static File BuildFile(String Title){
         String IDstring=Integer.toString(InstancesNumber);
-        File file=new File("File"+IDstring);
+        File file=new File(Title+IDstring);
         InstancesNumber++;
         return file;
     }
